@@ -8,12 +8,14 @@
     >
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="360dp"
+        android:layout_height="640dp"
         android:id="@+id/imageView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:scaleType="fitCenter" />
+        android:src="@drawable/karigazou"
+        android:scaleType="fitXY"
+        />
 
 
     <LinearLayout
