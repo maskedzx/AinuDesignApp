@@ -1,9 +1,12 @@
 package com.example.yuuya.ainudesignapp;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +15,42 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageButton make_button = (ImageButton) findViewById(R.id.make_button);
+        make_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), MakeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton show_button = (ImageButton) findViewById(R.id.show_button);
+        show_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(),ShowActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton output_button = (ImageButton) findViewById(R.id.output_button);
+        output_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(),OutputActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton shere_button = (ImageButton) findViewById(R.id.shere_button);
+        shere_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(),ShereActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

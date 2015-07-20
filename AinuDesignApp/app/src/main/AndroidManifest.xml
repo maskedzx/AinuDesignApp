@@ -16,6 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MakeActivity"
+            android:label="@string/title_activity_make"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".ShowActivity"
+            android:label="@string/title_activity_show"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".ShereActivity"
+            android:label="@string/title_activity_shere"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".OutputActivity"
+            android:label="@string/title_activity_output"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>
