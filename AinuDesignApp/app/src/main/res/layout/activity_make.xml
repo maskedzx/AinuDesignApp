@@ -26,7 +26,7 @@
             android:id="@+id/horizontalScrollView"
             android:layout_above="@+id/linearLayout2"
             android:layout_centerHorizontal="true"
-            ">
+            >
 
             <LinearLayout
                 android:orientation="horizontal"
