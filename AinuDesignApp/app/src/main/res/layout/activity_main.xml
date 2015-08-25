@@ -1,17 +1,17 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/karigazou"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:scaleType="fitXY"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+<LinearLayout android:id="@+id/mainLayout"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/karigazou"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              android:scaleType="fitXY"
+              tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -22,18 +22,18 @@
         android:id="@+id/make_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_margin="10dp"
+        android:layout_weight="1"
         android:scaleType="fitXY"
-        android:src="@drawable/make_button" />
+        android:src="@drawable/make_button"/>
 
     <ImageButton
         android:id="@+id/show_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_margin="10dp"
+        android:layout_weight="1"
         android:scaleType="fitXY"
-        android:src="@drawable/show_button" />
+        android:src="@drawable/show_button"/>
 
 </LinearLayout>

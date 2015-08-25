@@ -5,6 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_make">MakeActivity</string>
     <string name="title_activity_show">ShowActivity</string>
-    <string name="title_activity_shere">ShereActivity</string>
+    <string name="title_activity_shere">作品を見る</string>
     <string name="title_activity_output">OutputActivity</string>
 </resources>
