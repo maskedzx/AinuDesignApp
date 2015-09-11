@@ -34,23 +34,6 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        ImageButton output_button = (ImageButton) findViewById(R.id.output_button);
-        output_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(),OutputActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        ImageButton shere_button = (ImageButton) findViewById(R.id.shere_button);
-        shere_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(),ShereActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
