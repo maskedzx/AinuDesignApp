@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AinuDesignApp</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="goSave">保存</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_make">作品を作る</string>
     <string name="title_activity_show">作品を見る</string>

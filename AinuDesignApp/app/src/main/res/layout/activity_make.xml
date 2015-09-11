@@ -1,103 +1,71 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="com.example.yuuya.ainudesignapp.MakeActivity"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context="com.example.yuuya.ainudesignapp.MakeActivity"
     >
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        >
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="360dp"
-        android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
+    </FrameLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="0dp"
-        android:background="#FF0000"
-        android:orientation="vertical">
+        android:layout_weight="1"
+        android:background="@color/yellow"
 
-        <HorizontalScrollView
-            android:id="@+id/horizontalScrollView"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/linearLayout2"
-            android:layout_centerHorizontal="true"
-            >
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="0dp"
-                android:orientation="horizontal"
-                >
+                />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/parts_button"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/color_button"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/parts_button"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/color_button"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/goSave"
+                />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/parts_button"/>
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/color_button"/>
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/parts_button"/>
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/color_button"/>
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/parts_button"/>
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/color_button"/>
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/parts_button"/>
+        </LinearLayout>
 
 
-            </LinearLayout>
+    </HorizontalScrollView>
 
-        </HorizontalScrollView>
-
-    </LinearLayout>
-
-
-</RelativeLayout>
+</LinearLayout>

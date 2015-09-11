@@ -12,6 +12,8 @@ public class ShowActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
+
+        showList();
     }
 
     @Override
@@ -34,5 +36,10 @@ public class ShowActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showList(){
+        String tag = ShowListFragment.TAG;
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,ShowListFragment.newInstance(), tag).commit();
     }
 }
