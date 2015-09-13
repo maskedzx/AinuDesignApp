@@ -39,7 +39,7 @@ public class ShowActivity extends ActionBarActivity {
     }
 
     public void showList(){
-        String tag = ShowListFragment.TAG;
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,ShowListFragment.newInstance(), tag).commit();
+        String tag = DesignListFragment.TAG;
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,DesignListFragment.newInstance(), tag).commit();
     }
 }

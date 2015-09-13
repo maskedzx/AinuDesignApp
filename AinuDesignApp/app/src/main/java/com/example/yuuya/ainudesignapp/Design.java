@@ -17,7 +17,6 @@ public class Design  {
     public String getValue() {
         return value;
     }
-
     public void setValue(String value) {
         this.value = value;
     }
@@ -25,16 +24,8 @@ public class Design  {
     public long getCreatedTime() {
         return createdTime;
     }
-
     public void setCreatedTime(long createdTime) {
         this.createdTime = createdTime;
     }
 
-    /**
-     * テスト表示用にダミーのリストアイテムを作成.
-     */
-    public static List<Design> addDummyItem() {
-        List<Design> items = new ArrayList<>();
-        return items;
-    }
 }

@@ -100,7 +100,7 @@ public class DesignListFragment extends Fragment implements AdapterView.OnItemCl
             //作成時間を既に存在するデータか確認
             int updateIndex = -1;
             for (int i = 0; i < mAdapter.getCount(); i++) {
-                Design item = mAdapter.getItem(i);
+                Design item = (Design) mAdapter.getItem(i);
                 if (item.getCreatedTime() == newItem.getCreatedTime()) {
                     updateIndex = i;
                 }

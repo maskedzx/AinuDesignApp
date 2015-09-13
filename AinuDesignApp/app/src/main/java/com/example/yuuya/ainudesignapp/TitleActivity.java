@@ -9,12 +9,12 @@ import android.view.View;
 import android.widget.ImageButton;
 
 
-public class MainActivity extends ActionBarActivity {
+public class TitleActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_title);
 
         ImageButton make_button = (ImageButton) findViewById(R.id.make_button);
         make_button.setOnClickListener(new View.OnClickListener() {
