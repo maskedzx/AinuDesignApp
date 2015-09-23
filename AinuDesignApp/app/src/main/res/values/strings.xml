@@ -7,4 +7,7 @@
     <string name="title_activity_show">作品を見る</string>
     <string name="title_activity_shere">作品の共有</string>
     <string name="title_activity_output">作品の出力</string>
+    <string name="title_activity_sub">SubActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

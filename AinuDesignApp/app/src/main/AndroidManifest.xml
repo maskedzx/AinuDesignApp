@@ -21,22 +21,26 @@
         <activity
             android:name=".MakeActivity"
             android:label="@string/title_activity_make"
-            android:parentActivityName=".TitleActivity">
+            android:parentActivityName=".TitleActivity" >
         </activity>
         <activity
             android:name=".ShowActivity"
             android:label="@string/title_activity_show"
-            android:parentActivityName=".TitleActivity">
+            android:parentActivityName=".TitleActivity" >
         </activity>
         <activity
             android:name=".ShereActivity"
             android:label="@string/title_activity_shere"
-            android:parentActivityName=".TitleActivity">
+            android:parentActivityName=".TitleActivity" >
         </activity>
         <activity
             android:name=".OutputActivity"
             android:label="@string/title_activity_output"
-            android:parentActivityName=".TitleActivity">
+            android:parentActivityName=".TitleActivity" >
+        </activity>
+        <activity
+            android:name=".SubActivity"
+            android:label="@string/title_activity_sub" >
         </activity>
     </application>
 

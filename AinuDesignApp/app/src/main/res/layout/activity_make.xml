@@ -13,10 +13,16 @@
     >
 
     <FrameLayout
+        android:id="@+id/workFrame"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9"
         >
+
+        <com.example.yuuya.ainudesignapp.ZoomImageView
+            android:id="@+id/imageview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </FrameLayout>
 
@@ -40,6 +46,9 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="addMoreu"
+                android:id="@+id/addMoreu"
+
                 />
 
             <Button
