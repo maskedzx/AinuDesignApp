@@ -19,10 +19,8 @@
         android:layout_weight="9"
         >
 
-        <com.example.yuuya.ainudesignapp.ZoomImageView
-            android:id="@+id/imageview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+
+
 
     </FrameLayout>
 
@@ -43,33 +41,63 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:onClick="addMoreu"
                 android:id="@+id/addMoreu"
+                android:src="@drawable/moreu"
+                android:scaleType="fitXY"
+                />
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="addMoreu2"
+                android:id="@+id/addMoreu2"
+                android:src="@drawable/moreu2"
+                android:scaleType="fitXY"
+                />
 
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="addShiku"
+                android:id="@+id/addShiku"
+                android:src="@drawable/shiku"
+                android:scaleType="fitXY"
+                />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="addAiushi"
+                android:id="@+id/addAiushi"
+                android:src="@drawable/aiushi"
+                android:scaleType="fitXY"
                 />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="bgcolor"
+                android:id="@+id/bgcolor"
+                android:text="背景色"
                 />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:onClick="subDesign"
+                android:id="@+id/subDesign"
+                android:text="１つ戻す"
                 />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/goSave"
+                android:id="@+id/save"
+                android:onClick="onSaveInstanceState"
                 />
 
         </LinearLayout>

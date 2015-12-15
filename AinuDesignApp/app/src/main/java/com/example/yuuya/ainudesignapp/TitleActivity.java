@@ -16,21 +16,25 @@ public class TitleActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title);
 
+        //make_buttonの取得
         ImageButton make_button = (ImageButton) findViewById(R.id.make_button);
+        //make_buttonがタップされたときの処理
         make_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), MakeActivity.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplication(), MakeActivity.class); //遷移先の指定
+                startActivity(intent); //MakeActivityのスタート
             }
         });
 
+        //show_buttonの取得
         ImageButton show_button = (ImageButton) findViewById(R.id.show_button);
+        //show_buttonがタップされたときの処理
         show_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(),ShowActivity.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplication(),ShowActivity.class); //遷移先の指定
+                startActivity(intent); //ShowActivityのスタート
             }
         });
 
