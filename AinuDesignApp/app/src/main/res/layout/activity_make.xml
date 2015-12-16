@@ -87,6 +87,14 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="setSeek"
+                android:id="@+id/setSeek"
+                android:text="デザイン色"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:onClick="subDesign"
                 android:id="@+id/subDesign"
                 android:text="１つ戻す"
@@ -97,7 +105,6 @@
                 android:layout_height="match_parent"
                 android:text="@string/goSave"
                 android:id="@+id/save"
-                android:onClick="onSaveInstanceState"
                 />
 
         </LinearLayout>
