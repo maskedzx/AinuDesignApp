@@ -1,5 +1,7 @@
 package com.example.yuuya.ainudesignapp;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -17,6 +19,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -26,12 +29,16 @@ import android.widget.SeekBar;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 
 public class MakeActivity extends ActionBarActivity {
     private static final boolean DEBUG = false;
     private static final String TAG = "MakeActivity";
+
 
     private ImageButton addMoreuButton;
     private ImageButton addMoreuButton2;
@@ -40,17 +47,21 @@ public class MakeActivity extends ActionBarActivity {
     private Button bgcolorButton;
     private Button subDesignButton;
     private Button saveButton;
+    private Button commitButton;
+    private EditText editText;
     private FrameLayout workFrame;
     private Uri mUri;
     private int num = 0;
     private View designView;
-    private View seekView;
+    private View saveView;
     private int saveNum;
-    private boolean seek = false;
     private ImageView moreu;
     private ImageView moreu2;
     private ImageView shiku;
     private ImageView aiushi;
+    private SharedPreferences dataStore;
+    private boolean setSave = false;
+    private Activity workActivity;
 
 
     @Override
@@ -61,7 +72,7 @@ public class MakeActivity extends ActionBarActivity {
         if (savedInstanceState != null) {
             mUri = savedInstanceState.getParcelable("URI");
         }
-
+        dataStore = getSharedPreferences("DataStore", MODE_PRIVATE);
         setView();
     }
 
@@ -102,8 +113,6 @@ public class MakeActivity extends ActionBarActivity {
 
 
     @Override
-
-
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         menu.add(0, 0, 0, "赤");
         menu.add(0, 1, 1, "青");
@@ -118,8 +127,6 @@ public class MakeActivity extends ActionBarActivity {
 
 
     @Override
-
-
     public boolean onContextItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case 0:
@@ -159,87 +166,32 @@ public class MakeActivity extends ActionBarActivity {
         openContextMenu(bgcolorButton);
     }
 
-    public void setSeek(View view){
-        if(seek==false){
-            seekView = getLayoutInflater().inflate(R.layout.seekber, null);
-            workFrame.addView(seekView);
-            seek = true;
-            setSeekBer();
-        }else if(seek==true){
-            workFrame.removeView(seekView);
-            seek = false;
-        }
-
-    }
-
-    public void setSeekBer(){
-        SeekBar red =(SeekBar)findViewById(R.id.red);
-        SeekBar green =(SeekBar)findViewById(R.id.green);
-        SeekBar blue =(SeekBar)findViewById(R.id.blue);
-        red.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int p, boolean fromUser) {
-                moreu.setBackgroundColor(Color.rgb(p, 0, 0));
-                moreu2.setBackgroundColor(Color.rgb(p, 0, 0));
-                aiushi.setBackgroundColor(Color.rgb(p, 0, 0));
-                shiku.setBackgroundColor(Color.rgb(p, 0, 0));
-            }
-        });
-        green.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int p, boolean fromUser) {
-                moreu.setBackgroundColor(Color.rgb(0, p, 0));
-                moreu2.setBackgroundColor(Color.rgb(0, p, 0));
-                aiushi.setBackgroundColor(Color.rgb(0,p, 0));
-                shiku.setBackgroundColor(Color.rgb(0,p, 0));
-            }
-        });
-        blue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int p, boolean fromUser) {
-                moreu.setBackgroundColor(Color.rgb(0, 0, p));
-                moreu2.setBackgroundColor(Color.rgb(0, 0,p));
-                aiushi.setBackgroundColor(Color.rgb(0, 0, p));
-                shiku.setBackgroundColor(Color.rgb(0, 0, p));
-            }
-        });
-
-    }
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("saveNum", saveNum);
+    }
+
+    public void saveDesign(View view) {
+        if (setSave == false) {
+            saveView = getLayoutInflater().inflate(R.layout.savemenu, null);
+            workFrame.addView(saveView);
+            editText = (EditText) findViewById(R.id.edit_text);
+            commitButton = (Button) findViewById(R.id.button_write);
+            setSave = true;
+        }
+    }
+
+    public void commitDesign(View view){
+        String saveName = editText.getText().toString();
+        try{
+            OutputStream out = openFileOutput(saveName+".obj",MODE_PRIVATE);
+            PrintWriter writer = new PrintWriter(new OutputStreamWriter(out,"UTF-8"));
+            writer.append(saveName);
+            writer.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     public void addMoreu(View view) {

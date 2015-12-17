@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/saveLayout"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
-    <SeekBar
+    <EditText
+        android:id="@+id/edit_text"
+        android:hint="保存名"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/red"
-        android:max="255"/>
-    <SeekBar
+        android:textSize="30sp"
+        android:layout_margin="20dp"/>
+
+    <Button
+        android:id="@+id/button_write"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/green"
-        android:max="255"/>
-    <SeekBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/blue"
-        android:max="255"/>
+        android:text="保存"
+        android:onClick="commitDesign"/>
+
 
 </LinearLayout>

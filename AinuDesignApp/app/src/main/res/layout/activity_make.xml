@@ -105,6 +105,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/goSave"
                 android:id="@+id/save"
+                android:onClick="saveDesign"
                 />
 
         </LinearLayout>
